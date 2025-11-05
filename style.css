@@ -6,14 +6,33 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(
+            135deg, 
+            #aedbf2 0%, 
+            #eac4e6 60%, 
+            #f9e1f5 100%
+            );
+            background-size: 300% 300%;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
             overflow-x: hidden;
+            animation: aurora-gradient 20s ease infinite;
         }
+
+        @keyframes aurora-gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
 
         .container {
             background: rgba(255, 255, 255, 0.95);
@@ -85,15 +104,6 @@
             display: flex;
             gap: 8px;
             z-index: 10;
-        }
-
-        .gallery-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: all 0.3s;
         }
 
         .gallery-dot.active {
